@@ -1,1 +1,1 @@
-console.log(faizan)
+console.log(faizan);
