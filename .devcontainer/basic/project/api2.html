@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project in API</title>
+</head>
+<body>
+
+    <h1>API 2 Call in JavaScript</h1>
+    
+    <script>
+        const apiUrl = 'https://api.github.com/users/faizan-habib839';
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', apiUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    console.log(typeof data); // Logs 'object'
+                    console.log(data.bio); // Safely access the 'bio' property here
+                } else {
+                    console.error("Error: Unable to fetch data");
+                }
+            }
+        };  
+        xhr.send();
+    </script>
+</body>
+</html>

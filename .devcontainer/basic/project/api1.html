@@ -1,0 +1,34 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project in API</title>
+</head>
+<body>
+
+    <h1>API Call 1 in JavaScript</h1>
+    
+    <script>
+        const apiUrl = 'https://fakestoreapi.com/products'; // Example API URL
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', apiUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) { // Ensure response is fully received
+                if (xhr.status === 200) {
+                    const data = JSON.parse(this.responseText); // Parse response
+                    console.log(typeof data); // Logs 'object'
+                    console.log(data. description ); // Access 'default_title' safely
+                } else {
+                    console.error("Error: Unable to fetch data");
+                }
+            }
+           
+        };  
+        xhr.send();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix JavaScript Code</title>
+</head>
+<body>
+    <div id="hid1">I am original content</div>
+    <button id="btn2">Stop Timer</button>
+
+    <script>
+        // Function to change content
+        let changeme = function () {
+            document.getElementById('hid1').innerHTML = 'I am new to JS';
+        };
+
+        // Start a timeout
+        let timeoutID = setTimeout(changeme, 2000);
+
+        // Function to handle button click
+        let button1 = function () {
+            document.getElementById('btn2').addEventListener('click', function () {
+                clearTimeout(timeoutID);
+                console.log('stopped') // Clear the timeout
+            });
+        };
+
+        // Call the button setup function
+        button1();
+    </script>
+</body>
+</html>
